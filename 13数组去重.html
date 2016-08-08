@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	  <script>
+	  	 /** 2
+  * 编写程序实现去除数组重复元素
+  * arr1 = [1,2,2,2,3,4]
+  * 处理后是
+  * arr2 = [1,2,3,4]
+  */
+	Array.prototype.strip=function(){
+		if(this.length<2)return [this[0]];
+		var arr=[];
+		for(var i=0;i<this.length;i++){			
+			arr.push(Number(this.splice(i--,1)));
+			for(var j=0;j<this.length;j++){
+				if(this[j]==arr[arr.length-1]){
+					this.splice(j--,1);
+				}
+			}
+		}		
+		return arr;
+	}
+	var arr1 = [111,1,1,1,3,4];
+	var arr2 = arr1.strip();	
+	console.log(arr2)
+	  </script>	
+	</body>
+</html>

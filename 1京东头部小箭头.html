@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+<style type="text/css">
+    #bigDiv{width: 200px;height: 200px;padding:100px ;background-color: #909090;}
+	#wrapper{
+		width:18px;height: 18px;
+		/*background-color: #909090;*/
+		/*transform: rotateZ(45deg);*/
+		position: relative;
+		transition: all .1s;
+	}
+	#item0{width:18px;height: 18px;position: absolute;}
+	#item1{width: 18px;height: 9px;position: absolute;top: 0px;left: 0px;
+	    background-color: #909090;}
+	 #bigDiv:hover #wrapper{
+		transform-origin:9px 15px;
+		transform: rotateZ(180deg);
+	}
+/*主要应用的是2d变形 与过度的结合*/
+</style>
+	<body>
+	  <div id="bigDiv">
+	  	<div id="wrapper">
+			 <div id="item0">
+			 	◇
+			 </div>
+			<div id="item1"></div>
+		</div>
+	  </div>
+	</body>
+</html>

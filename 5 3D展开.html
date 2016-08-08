@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+	  #wrapper{
+	  	margin-top: 200px;
+	  	margin-left: 200px;
+	  	perspective: 500px;
+	  }
+	  #container{
+			width: 200px;
+			height:200px;
+			perspective: 500px;
+		  /*perspective-origin:;*/ 
+          /*transform-style: preserve-3d;*/
+          /*animation: item 1s 6s linear infinite;*/
+		}
+		@keyframes item{
+			100%{
+				transform: rotate3d();
+	    	}
+		}
+		.item{
+			width: 200px;
+			height: 200px;
+			line-height: 200px;
+			font-size: 50px;
+			background-color: lightgreen;
+			border: 1px solid #666666;
+			position: absolute;
+			text-align: center;
+			opacity: 0.5;
+		}				
+		.item1{
+			z-index: 6;
+			animation: item1 1s linear both;
+			transform-origin:left ;
+		}
+		@keyframes item1{			 
+			100%{
+				transform: rotateY(-90deg);		
+		     }
+		}
+		.item2{
+			z-index: 5;
+			animation: item2 1s 1s linear both;
+			transform-origin:right ;
+		}
+		@keyframes item2{	 
+			100%{
+				transform: rotateY(90deg);	
+				}	
+		}
+		.item3{
+			z-index: 4;
+			animation: item3 1s 2s linear both;
+			transform-origin:top ;
+		}
+		@keyframes item3{	 
+			100%{
+				transform: rotateX(90deg);	
+				}	
+		}		
+		.item4{
+			z-index: 3;
+			animation: item4 1s 3s linear both;
+			transform-origin:bottom ;
+		}
+		@keyframes item4{	 
+			100%{
+				transform: rotateX(-90deg);	
+				}	
+		}	
+		.item5{
+			z-index: 2;
+			animation: item5 1s 4s linear both;
+			transform-origin:;
+		}
+		@keyframes item5{	 
+			100%{
+				transform: translateZ(200px);	
+				}	
+		}
+		.item6{
+			z-index: 1;
+			animation: item6 1s 5s linear both;
+		}
+		@keyframes item6{	 
+			100%{
+				transform: rotateY(180deg);	
+				}	
+		}
+	</style>
+	<body>
+		<div id="wrapper">
+			<div id="container">
+				<div class="item item1">1</div>
+				<div class="item item2">2</div>
+				<div class="item item3">3</div>
+				<div class="item item4">4</div>
+				<div class="item item5">5</div>
+				<div class="item item6">6</div>
+			</div>
+		</div>
+	</body>
+</html>

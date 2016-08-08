@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+<style type="text/css">
+    div{width: 360px;height: 500px;margin:0 auto;margin-top:100px ;}
+	img{display: block;float:left;height: 70px;width: 70px;cursor: pointer;}
+	img:first-child{width: 360px;height: 360px;border: 1px solid #909090;}
+</style>
+	<body>
+	  <div id="wrapper">
+	  	<img src="img/4/04big.jpg" />
+		<img src="img/4/01.jpg" />
+		<img src="img/4/02.jpg" />
+		<img src="img/4/03.jpg" />
+		<img src="img/4/04.jpg" />
+		<img src="img/4/05.jpg" />
+	  </div>
+		
+	<script>
+	    var $=function(num){
+      	if(num.slice(0,1)=="#"){
+      		num=num.slice(1);
+      		return  document.getElementById(num);	
+      	}else if(num.slice(0,1)=="."){  
+      		num=num.slice(1);
+      		return document.getElementsByClassName(num);
+      	}else{
+      	   return document.getElementsByTagName(num);
+      	}
+      }
+	  for(var i=0;i< $("img").length-1;i++){
+	  	$("img")[i+1].onmousemove=function(){
+	  		var a=this.src.slice(-6,-4);
+	  		var b="img/4/"+a+"big.jpg"
+	  		$("img")[0].src=b;
+	  	}
+	  }
+	</script>
+	</body>
+</html>

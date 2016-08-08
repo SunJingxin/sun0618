@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	  <script>
+	  //思路就跟后面的比较小的换过来
+	    var arr=[5,4,3,2,1];
+	    for(var x=0;x<arr.length-1;x++){
+	      for(var y=x+1;y<arr.length;y++){
+	      	if(arr[x]>arr[y]){
+	      	  var temp=arr[x];
+	      	  arr[x]=arr[y];
+	      	  arr[y]=temp;
+	      	}
+	      }
+	    }
+	    console.log(arr)
+	  </script>
+	</body>
+</html>

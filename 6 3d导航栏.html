@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+</head>
+<style type="text/css">
+    .wrapper{
+    	width: 1000px;
+    	height: 50px;
+    	perspective: 500px;
+    	margin: 0 auto;
+    	margin-top:50px;
+    	perspective-origin:center;
+    }
+    ul,li,dl,dt,dd{
+    	margin: 0;
+    	padding: 0;
+    	list-style: none;
+    }   
+    ul{
+		transform-style: preserve-3d;
+		width: 120px;
+		height: 50px;
+		position:relative;	
+		transition: all .33s;	
+		float: left;
+	}
+	li{
+		position: absolute;
+		width: 120px;
+		height: 50px;
+		background-color:#74ADAA;
+		line-height: 50px;
+		font-size: 30px;
+		text-align: center;
+		color: white;
+	}
+	.li1{
+	  /*默认显示不做处理*/
+	}
+	.li2{
+		transform-origin: 50% 50% -25px;
+		transform: rotateX(-90deg);
+	}
+	.wrapper-div{
+		display: none;
+		position: absolute;
+		top: 50px;
+		left: 720px;
+		perspective: 500px;
+		perspective-origin:right bottom;
+	}	
+	dl{ position: relative;
+		transform-style: preserve-3d;
+		transition: all .33s;	
+		width: 120px;
+		height: 50px;				
+	}
+	dt{		
+		position: absolute;
+		width: 120px;
+		height: 50px;
+		background-color:#74ADAA;
+		line-height: 50px;
+		font-size: 30px;
+		text-align: center;
+		color: white;
+	}
+	.dt1{
+		
+	}
+	.dt2{
+		transform-origin: 50% 50% -25px;
+		transform: rotateX(-90deg);
+	}	
+	dl:hover{
+		transform-origin: 50% 50% -25px;
+		transform: rotateX(90deg);
+	}	
+	dl:hover dt{
+		background-color: #478480;
+	}	
+	
+	ul:hover{
+		transform-origin: 50% 50% -25px;
+		transform: rotateX(90deg);
+	}	
+	ul:hover li{
+		background-color: #478480;
+	}	
+</style>
+<body>
+    <div class="wrapper">
+		<ul>
+			<li class="li1">1</li>
+			<li class="li2">孙景欣</li>
+		</ul>
+		<ul>
+			<li class="li1">2</li>
+			<li class="li2">段明月</li>
+		</ul>
+		<ul>
+			<li class="li1">3</li>
+			<li class="li2">孙宝宝</li>
+		</ul>
+		<ul>
+			<li class="li1">4</li>
+			<li class="li2">段苗苗</li>
+		</ul>
+		<ul>
+			<li class="li1">5</li>
+			<li class="li2">嘻嘻</li>
+		</ul>
+		<ul>
+			<li class="li1">6</li>
+			<li class="li2">哈哈</li>
+		</ul>
+		<ul>
+			<li class="li1">7</li>
+			<li class="li2">不错吧</li>
+		</ul>
+		<ul>
+			<li class="li1">8</li>
+			<li class="li2">待优化</li>	
+		</ul>	
+		<!--与ul 同级别-->
+		<div class="wrapper-div">
+			<dl>
+				<dt class="dt1">二级菜单</dt>
+				<dt class="dt2">孙景欣</dt>
+			</dl>
+			<dl>
+				<dt class="dt1">二级菜单</dt>
+				<dt class="dt2">孙景欣</dt>
+			</dl>
+			<dl>
+				<dt class="dt1">二级菜单</dt>
+				<dt class="dt2">孙景欣</dt>
+			</dl>
+			<dl>
+				<dt class="dt1">二级菜单</dt>
+				<dt class="dt2">孙景欣</dt>
+			</dl>		
+		</div>
+	</div>
+	<script>
+		 var $=function(num){
+      	if(num.slice(0,1)=="#"){
+      		num=num.slice(1);
+      		return  document.getElementById(num);	
+      	}else if(num.slice(0,1)=="."){  
+      		num=num.slice(1);
+      		return document.getElementsByClassName(num);
+      	}else{
+      	   return document.getElementsByTagName(num);
+      	}
+      }
+	  console.log( $("ul")[6])
+	  $("ul")[6].onmouseenter=function(){
+	  	$(".wrapper-div")[0].style.display="block";
+	  }
+	  $("ul")[6].onmouseleave=function(){	   	
+	   	$(".wrapper-div")[0].style.display="none";
+	 }
+	  $(".wrapper-div")[0].onmouseenter=function(){
+	  	$(".wrapper-div")[0].style.display="block";
+	 }
+	  $(".wrapper-div")[0].onmouseleave=function(){
+	  	$(".wrapper-div")[0].style.display="none";
+	 }	   
+	</script>
+</body>
+</html>

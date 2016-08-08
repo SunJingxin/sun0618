@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="UTF-8">
+	<title></title>
+<style type="text/css">
+*{
+  padding: 0;
+  margin: 0;
+}
+#animation {
+  margin: 0 auto;
+  height: 100px;
+  width: 100px;
+  background-color: #dfdfdf;
+  /*transform:translateX(30px) translateY(50px) translateZ(-50px);*/
+  animation: aa 4s linear 0s 1 normal;
+  /*名称,执行时间,执行速度,开始之前的延迟时间,执行次数,是否反向*/
+}
+  /*规定动画*/			
+@keyframes aa {
+  0% {
+	width: 150px;
+	height: 150px;
+	background-color: pink;
+	transform: rotateX(30deg) rotateY(30deg) rotateZ(30deg);
+    }
+  25% {
+	width: 200px;
+	height: 200px;
+	background-color: green;
+	transform: rotateX(60deg) rotateY(180deg) rotateZ(45deg);
+	}
+  50% {
+	height: 100px;
+	width: 100px;
+	background-color: pink;
+	transform: rotateX(90deg) rotateY(120deg) rotateZ(95deg);
+	}
+  75% {
+	width: 400px;
+	height: 400px;
+	background-color: gold;
+	transform: rotateX(120deg) rotateY(150deg) rotateZ(125deg);
+	}
+   100% {
+	width: 400px;
+	height: 400px;
+	background-color: greenyellow;
+	transform: rotateX(180deg) rotateY(270deg) rotateZ(0deg);
+	}
+}
+</style>
+</head>
+  <body>
+	<div id="animation">
+		走起！！
+	</div>
+</body>
+</html>

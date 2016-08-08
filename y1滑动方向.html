@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+<style type="text/css">
+	#show{
+		
+	}
+	#item{
+		width: 200px;
+		height: 200px;
+		background-color: red;
+	}
+</style>
+	<body>
+		<div id="show">
+			
+		</div>
+		<div id="item">
+			
+		</div>
+	<script>
+		var show=document.getElementById("show");
+		var item=document.getElementById("item");
+		//得到两个点坐标
+		function getPoint(e){
+			var touches=e.touches;
+			return{
+				x:touches[0].clientX,
+				y:touches[0].clientY
+			}
+		}
+		//得到两点间的距离
+		function getDistance(p1,p2){
+			return Math.sqrt((p1.x-p2.x)*(p1.x-p2.x)+
+			(p1.y-p2.y)*(p1.y-p2.y));
+		}
+		//获取swiper
+		function getDirection(p1,p2){
+			var dx=p2.x-p1.x;
+			var dy=p2.y-p1.y;
+			//这个角度在X轴正方向是0 顺时针是正角度  逆时针是负角度
+			var angle=Math.atan2(dy,dx)*180/Math.PI;
+			if(angle<45&&angle>-45) return "right";
+			if(angle>=45&&angle<135) return "bottom";
+			if(angle>=135||angle<-135) return "left";
+			if(angle>=-135&&angle<=-45) return "top";
+		}
+		item.addEventListener("touchstart",function(e){
+			start_point=getPoint(e);
+		},false);
+		item.addEventListener("touchmove",function(e){
+			end_point=getPoint(e);
+		},false);
+		item.addEventListener("touchend",function(e){
+			if(getDistance(start_point,end_point)>30){
+				show.innerHTML=getDirection(start_point,end_point)
+			}
+		},false);		
+	</script>
+	</body>
+</html>

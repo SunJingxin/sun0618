@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		ul,li{
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		li{
+			width: 27px;
+			height: 28px;
+			background-image:url(img/2/1.gif);
+			background-position: 0px 0px ;
+			display: inline-block;
+		}
+		li:last-child{
+				background-image:none;
+				display: block;
+				width: 200px;
+		}
+	</style>
+	<body>
+		<ul>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li>
+				您的评分是：<span>5</span>分
+			</li>
+		</ul>
+		<script type="text/javascript">
+			var oLi=document.getElementsByTagName("li");
+			var span=document.getElementsByTagName("span")
+			var count=0;
+			for(var i=0;i<oLi.length-1;i++){
+			   (function(num){
+			       	oLi[num].onmouseenter=function(e){
+			       	   for(var j=0;j<oLi.length;j++){
+			       	   	 oLi[j].style.backgroundPosition="0px 0px";
+			       	   }
+				       for(var j=0;j<=num;j++){
+				         oLi[j].style.backgroundPosition="0px -28px";				         
+				       }	
+				      count=num+1;
+				      span[0].innerHTML=count;
+			    }
+			        oLi[num].onclick=function(){
+			        	alert("已经提交")
+			        }			       	
+		     })(i);
+		  }			
+		</script>
+	</body>
+</html>

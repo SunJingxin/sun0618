@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	  <script>
+	  //这个的思路就是将最大的数沉淀到最后
+	  //冒泡法
+	    var arr=[123,12,31,23,21,321,3,123,1,3,123,12,3,123,12,31,23,21,3,45,4,65,456,76]
+	  	for(var x=0;x<arr.length-1;x++){
+	  	  for(var y=0;y<arr.length-1-x;y++)
+	  		if(arr[y]>arr[y+1]){
+	  			swap(arr,y,y+1)
+	  		}
+	  	}
+	  	function swap(a,b,c){
+	  	  var count=a[y];
+	  	  a[y]=a[y+1];
+	  	  a[y+1]=count;	  	  
+	  	}
+	   console.log(arr)
+	  </script>
+	</body>
+</html>
